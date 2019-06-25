@@ -1,0 +1,43 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<form [formGroup]="personForm">
+  
+  <mat-form-field>
+    <p *ngIf="!personForm.valid">*Required</p>
+    <input matInput formControlName="name" placeholder="Name" type="text">
+  </mat-form-field><br>
+
+  <mat-form-field>
+    <p *ngIf="!personForm.valid">*Required</p>
+    <input matInput formControlName="surname" placeholder="Surname">   
+  </mat-form-field><br>
+
+  <mat-form-field>
+    <p *ngIf="!personForm.valid">*Required</p>
+    <input matInput formControlName="age" placeholder="Age">  
+  </mat-form-field><br>
+
+  <mat-form-field>
+    <p *ngIf="!personForm.valid">*Required</p>
+    <input matInput formControlName="email" placeholder="Email" ><br><br>
+  </mat-form-field><br>
+
+  <mat-form-field>
+    <p *ngIf="!personForm.valid">*Required</p>
+    <input matInput formControlName="number" placeholder="Mobile Number" maxlength="10"><br><br>
+  </mat-form-field><br>
+
+  <button [disabled] = "!personForm.valid" (click)="addSave()" >Save</button>
+  
+  <div *ngFor="let infos of info">
+
+    {{infos.name}}<br>
+    {{infos.surname}}<br>
+    {{infos.age}}<br>
+    {{infos.email}}<br>
+    {{infos.number}}<br>
+  </div>
+</form>
+<!-- <mat-form-field class="example-full-width">
+    <input matInput placeholder="Favorite food" value="Sushi">
+  </mat-form-field> -->
